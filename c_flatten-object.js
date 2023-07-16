@@ -4,8 +4,8 @@ input : {a: { b: 5, c: {d: 3} }, e: { f: ‘foo’ } }
 output: { ‘a.b’: 5 , ‘a.c.d’: 3, ‘e.f’: ‘foo’ }
 */
 
-  const flattenObject = (inputObj) => {
-    if (inputObj && typeof inputObj !== 'object') {
+  const flattenObject = (inputObj = {}) => {
+    if (typeof inputObj !== 'object') {
       return {};
     }
 

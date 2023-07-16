@@ -5,10 +5,13 @@ output: -7,855,948.9527
 */
 
 
-  const addThousandsSeparators = (number) => {
-    const rule = /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g;
-    return number.toString().replace(rule, ',')
+const addThousandsSeparators = (number) => {
+  if (typeof number !== 'number') {
+    return '';
   }
+  const rule = /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g;
+  return number.toString().replace(rule, ',')
+}
 
 /*
 \B：確保千分位符號不會被加在開頭

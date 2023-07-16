@@ -4,7 +4,8 @@ input : [[6, 11], [5, 8], [17, 20], [7], [14,17]]
 output: { overlap: [[6, 8], [17]], notInclude: [[1, 4], [12, 13]] }
 */
 
-const findRanges = (inputArr) => {
+const findRanges = (inputArr = []) => {
+  if (!Array.isArray(inputArr) || inputArr.length === 0) return { overlap: [], notInclude: []};
 
   const overlap = [];
   const notInclude = [];
